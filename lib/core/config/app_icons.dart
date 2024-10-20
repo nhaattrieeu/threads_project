@@ -1,0 +1,31 @@
+class AppIcons {
+  static const String _path = "assets/icons/";
+  static const String icActivity = "${_path}ic_activity.svg";
+  static const String icActivityBadge = "${_path}ic_activity_badge.svg";
+  static const String icActivityLight = "${_path}ic_activity_light.svg";
+  static const String icActivityDark = "${_path}ic_activity_dark.svg";
+  static const String icHome = "${_path}ic_home.svg";
+  static const String icHomeLight = "${_path}ic_home_light.svg";
+  static const String icHomeDark = "${_path}ic_home_dark.svg";
+  static const String icProfile = "${_path}ic_profile.svg";
+  static const String icProfileLight = "${_path}ic_profile_light.svg";
+  static const String icProfileDark = "${_path}ic_profile_dark.svg";
+  static const String icSearch = "${_path}ic_search.svg";
+  static const String icSearchLight = "${_path}ic_search_light.svg";
+  static const String icSearchDark = "${_path}ic_search_light_dark.svg";
+  static const String icCreate = "${_path}ic_create.svg";
+  static const String icStar = "${_path}ic_star.svg";
+  static const String ic3dots = "${_path}ic_3dots.svg";
+  static const String icLove = "${_path}ic_love.svg";
+  static const String icLoveActive = "${_path}ic_love_active.svg";
+  static const String icComment = "${_path}ic_comment.svg";
+  static const String icRepost = "${_path}ic_repost.svg";
+  static const String icShare = "${_path}ic_share.svg";
+  static const String icGallery = "${_path}ic_gallery.svg";
+  static const String icCamera = "${_path}ic_camera.svg";
+  static const String icGif = "${_path}ic_gif.svg";
+  static const String icMic = "${_path}ic_mic.svg";
+  static const String icHashtag = "${_path}ic_hashtag.svg";
+  static const String ic3lines = "${_path}ic_3lines.svg";
+  static const String icLocation = "${_path}ic_location.svg";
+}
