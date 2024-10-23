@@ -28,4 +28,5 @@ class AppIcons {
   static const String icHashtag = "${_path}ic_hashtag.svg";
   static const String ic3lines = "${_path}ic_3lines.svg";
   static const String icLocation = "${_path}ic_location.svg";
+  static const String icCancel = "${_path}ic_cancel.svg";
 }

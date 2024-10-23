@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:threads_project/core/config/config.dart';
+import 'package:threads_project/presentation/create/pages/create_page.dart';
 import 'package:threads_project/presentation/threads/pages/threads_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -30,16 +31,28 @@ class HomePage extends StatelessWidget {
             ),
           ),
           BottomNavigationBarItem(
-            icon: Container(
-              width: 56,
-              height: 44,
-              // margin: const EdgeInsets.only(bottom: 5),
-              decoration: BoxDecoration(
-                color: Theme.of(context).cardColor,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Center(
-                child: SvgPicture.asset(AppIcons.icCreate),
+            icon: GestureDetector(
+              onTap: () {
+                showModalCreate(context);
+              },
+              child: Container(
+                color: Theme.of(context).scaffoldBackgroundColor,
+                width: double.infinity,
+                height: double.infinity,
+                child: Center(
+                  child: Container(
+                    width: 56,
+                    height: 44,
+                    // margin: const EdgeInsets.only(bottom: 5),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).cardColor,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Center(
+                      child: SvgPicture.asset(AppIcons.icCreate),
+                    ),
+                  ),
+                ),
               ),
             ),
           ),

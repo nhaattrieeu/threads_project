@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rive/rive.dart';
 import 'package:threads_project/core/config/config.dart';
 import 'package:threads_project/presentation/threads/widgets/create_post.dart';
 import 'package:threads_project/presentation/threads/widgets/thread_item.dart';
+
+import '../cubit/threads_cubit.dart';
 
 class ThreadsPage extends StatefulWidget {
   const ThreadsPage({super.key});
@@ -21,13 +24,14 @@ class _ThreadsPageState extends State<ThreadsPage> {
 
   @override
   void initState() {
+    context.read<ThreadsCubit>().getHome();
+
     _scrollController = ScrollController();
     _scrollController.addListener(() {
       if (_scrollController.offset <= 0) {
         setState(() {
           _offset = _scrollController.offset.abs();
           pull?.value = _offset * 2;
-          print(_machineController?.isActive);
         });
       }
     });

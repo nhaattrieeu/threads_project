@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "639964903352",
+    "firebase_url": "https://threads-project-b2b06-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "threads-project-b2b06",
+    "storage_bucket": "threads-project-b2b06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639964903352:android:617a75f2cfdc053124014d",
+        "android_client_info": {
+          "package_name": "com.example.threads_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPC5LAfUrebP7dar7Tbfsrm8H1KvsW7ok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

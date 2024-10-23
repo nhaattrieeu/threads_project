@@ -17,10 +17,10 @@ class ThreadItem extends StatelessWidget {
     const String body =
         "Failures are stepping stones to success. Embrace them, learn from them, and keep moving forward";
     bool isLoved = false;
-    int numOfLove = 512;
-    int numOfComment = 64;
-    int numOfRepost = 12;
-    int numOfShare = 5;
+    int numOfLove = 0;
+    int numOfComment = 0;
+    int numOfRepost = 0;
+    int numOfShare = 0;
     int time = 6;
     String userName = "nhaatrieeu";
 
@@ -109,7 +109,7 @@ class ThreadItem extends StatelessWidget {
                     const Text(
                       body,
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 15,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -118,8 +118,8 @@ class ThreadItem extends StatelessWidget {
                       children: [
                         StatefulBuilder(
                           builder: (context, setState) {
-                            return CupertinoButton(
-                              onPressed: () {
+                            return GestureDetector(
+                              onTap: () {
                                 setState(() {
                                   if (isLoved) {
                                     numOfLove--;
@@ -129,8 +129,6 @@ class ThreadItem extends StatelessWidget {
                                   isLoved = !isLoved;
                                 });
                               },
-                              minSize: 0,
-                              padding: EdgeInsets.zero,
                               child: Row(
                                 children: [
                                   SvgPicture.asset(
@@ -138,19 +136,26 @@ class ThreadItem extends StatelessWidget {
                                         ? AppIcons.icLoveActive
                                         : AppIcons.icLove,
                                   ),
-                                  const Gap(4),
-                                  AnimatedFlipCounter(
-                                    value: numOfLove,
-                                    textStyle: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400,
-                                      color: isLoved
-                                          ? Theme.of(context)
-                                              .colorScheme
-                                              .surface
-                                          : Theme.of(context)
-                                              .colorScheme
-                                              .outline,
+                                  Visibility(
+                                    visible: numOfLove == 0 ? false : true,
+                                    child: Row(
+                                      children: [
+                                        const Gap(4),
+                                        AnimatedFlipCounter(
+                                          value: numOfLove,
+                                          textStyle: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w400,
+                                            color: isLoved
+                                                ? Theme.of(context)
+                                                    .colorScheme
+                                                    .surface
+                                                : Theme.of(context)
+                                                    .colorScheme
+                                                    .outline,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
@@ -159,66 +164,93 @@ class ThreadItem extends StatelessWidget {
                           },
                         ),
                         const Gap(18),
-                        CupertinoButton(
-                          onPressed: () {},
-                          minSize: 0,
-                          padding: EdgeInsets.zero,
+                        GestureDetector(
+                          onTap: () {},
                           child: Row(
                             children: [
                               SvgPicture.asset(AppIcons.icComment),
-                              const Gap(4),
-                              Text(
-                                numOfComment.toString(),
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                  color: isLoved
-                                      ? Theme.of(context).colorScheme.surface
-                                      : Theme.of(context).colorScheme.outline,
+                              Visibility(
+                                visible: numOfComment == 0 ? false : true,
+                                child: Row(
+                                  children: [
+                                    const Gap(4),
+                                    AnimatedFlipCounter(
+                                      value: numOfComment,
+                                      textStyle: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                        color: isLoved
+                                            ? Theme.of(context)
+                                                .colorScheme
+                                                .surface
+                                            : Theme.of(context)
+                                                .colorScheme
+                                                .outline,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
                           ),
                         ),
                         const Gap(18),
-                        CupertinoButton(
-                          onPressed: () {},
-                          minSize: 0,
-                          padding: EdgeInsets.zero,
+                        GestureDetector(
+                          onTap: () {},
                           child: Row(
                             children: [
                               SvgPicture.asset(AppIcons.icRepost),
-                              const Gap(4),
-                              Text(
-                                numOfRepost.toString(),
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                  color: isLoved
-                                      ? Theme.of(context).colorScheme.surface
-                                      : Theme.of(context).colorScheme.outline,
+                              Visibility(
+                                visible: numOfRepost == 0 ? false : true,
+                                child: Row(
+                                  children: [
+                                    const Gap(4),
+                                    AnimatedFlipCounter(
+                                      value: numOfRepost,
+                                      textStyle: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                        color: isLoved
+                                            ? Theme.of(context)
+                                                .colorScheme
+                                                .surface
+                                            : Theme.of(context)
+                                                .colorScheme
+                                                .outline,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
                           ),
                         ),
                         const Gap(18),
-                        CupertinoButton(
-                          onPressed: () {},
-                          minSize: 0,
-                          padding: EdgeInsets.zero,
+                        GestureDetector(
+                          onTap: () {},
                           child: Row(
                             children: [
                               SvgPicture.asset(AppIcons.icShare),
-                              const Gap(4),
-                              Text(
-                                numOfShare.toString(),
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                  color: isLoved
-                                      ? Theme.of(context).colorScheme.surface
-                                      : Theme.of(context).colorScheme.outline,
+                              Visibility(
+                                visible: numOfShare == 0 ? false : true,
+                                child: Row(
+                                  children: [
+                                    const Gap(4),
+                                    AnimatedFlipCounter(
+                                      value: numOfShare,
+                                      textStyle: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                        color: isLoved
+                                            ? Theme.of(context)
+                                                .colorScheme
+                                                .surface
+                                            : Theme.of(context)
+                                                .colorScheme
+                                                .outline,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
